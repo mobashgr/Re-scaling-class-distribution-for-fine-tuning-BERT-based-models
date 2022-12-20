@@ -1,5 +1,5 @@
 # Re-scaling class distribution for fine-tuning BERT-based models
-Authors: Ghadeer Mobasher, Pedro Ruas, Francisco M. Couto, Michael Gertz and Wolfgang Müller
+Authors: Ghadeer Mobasher*, Pedro Ruas, Francisco M. Couto, Michael Gertz and Wolfgang Müller
 
 ## Motive
 Biomedical pre-trained language models (BioPLMs) have been achieving state-of-the-art results for various biomedical text mining tasks. However, prevailing fine-tuning approaches naively train BioPLMs on targeted datasets without considering the class distributions. This is problematic, especially
@@ -26,23 +26,18 @@ To directly download NER datasets, use `download.sh` or manually download them v
 We adapted the `preprocessing.sh` from [BioBERT](https://github.com/dmis-lab/biobert) to include [BioRED](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioRED/)
 
 ## Fine-tuning with handling the class imbalance
-We have conducted expirements on different BERT models using WELT weighting scheme. We have compared WELT againest other existing weighting schemes and the corresponding traditional fine-tuning approaches(i.e normal BioBERT fine-tuning)
+We have conducted expirements on two different BERT models using WELT weighting scheme. We have compared WELT againest the corresponding traditional fine-tuning approaches(i.e normal BioBERT fine-tuning)
 
 **Fine-tuning BERT Models**
+Our expiremental work focused on BioBERT(mixed/continual pre-trained language model) & PubMedBERT(domain-specific/trained from scratch pre-trained language model), however WELT can be adapted to other transformers like ELECTRA.
 | Model 	| Used version in HF :hugs: |
 |---	|---	|
 |BioBERT| [model_name_or_path](https://huggingface.co/dmis-lab/biobert-v1.1)|
-|BlueBERT| [model_name_or_path](https://huggingface.co/bionlp/bluebert_pubmed_uncased_L-12_H-768_A-12)|
 |PubMedBERT| [model_name_or_path](https://huggingface.co/microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract)|
-|SciBERT| [model_name_or_path](https://huggingface.co/allenai/scibert_scivocab_uncased)|
+
 
 **WELT equations** 
-|Name | Formula |
-|---	|---	|
-|Inverse of Number of Samples (INS)|$weight[class]= \textstyle \dfrac{1}{n_c}$|
-|Inverse of Square Root of Number of Samples (ISNS)| $weight[class]= \textstyle \dfrac{1}{\sqrt {n_c}}$|
-|Effective Number of Samples (ENS)| $weight[class]= \textstyle \dfrac{1-\beta}{1-\beta ^ {n_c}}$|
-|Weighted Loss Trainer (WELT)| $CW_c= \textstyle 1- \dfrac{ClassDistibution_c}{TotalOfClassesDistributions_t}$|
+Weighted Loss Trainer (WELT) \\ $CW_c= \textstyle 1- \dfrac{ClassDistibution_c}{TotalOfClassesDistributions_t}$|
 
 **Cost-Sensitive Fine-Tuning**
 
