@@ -28,7 +28,7 @@ We adapted the `preprocessing.sh` from [BioBERT](https://github.com/dmis-lab/bio
 ## Fine-tuning with handling the class imbalance
 We have conducted expirements on two different BERT models using WELT weighting scheme. We have compared WELT againest the corresponding traditional fine-tuning approaches(i.e normal BioBERT fine-tuning)
 
-**Fine-tuning BERT Models**
+**Fine-tuning BERT Models** \
 Our expiremental work focused on BioBERT(mixed/continual pre-trained language model) & PubMedBERT(domain-specific/trained from scratch pre-trained language model), however WELT can be adapted to other transformers like ELECTRA.
 | Model 	| Used version in HF :hugs: |
 |---	|---	|
@@ -37,7 +37,11 @@ Our expiremental work focused on BioBERT(mixed/continual pre-trained language mo
 
 
 **WELT equations** 
-Weighted Loss Trainer (WELT) \\ $CW_c= \textstyle 1- \dfrac{ClassDistibution_c}{TotalOfClassesDistributions_t}$|
+  $CW_c= \textstyle 1- \dfrac{ClassDistibution_c}{TotalOfClassesDistributions_t}$ \
+  $WV= \textstyle \sum_{c=1}^{t}CW_c$ \
+  $\sigma \vec{(WV)} i=  \textstyle \dfrac {e^{WV_i}}{ \sum_{c=1}^{t}e^{WV_c}}$ \
+ $loss(x,class)=\textstyle \sigma \vec{(WV)} i [class] \Theta$ \
+ $where,\Theta= -x[class]+\log{\sum_j exp(x[j])}$  \
 
 **Cost-Sensitive Fine-Tuning**
 
