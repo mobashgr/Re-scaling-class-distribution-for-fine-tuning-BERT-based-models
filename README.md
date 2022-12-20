@@ -11,14 +11,14 @@ when dealing with imbalanced biomedical gold-standard datasets for named entity 
 **Dependencies**
 -	Python (>=3.6)
 -	Pytorch (>=1.2.0) 
-1.	Clone this GitHub repository: `git clone https://github.com/mobashgr/WELT.git`
+1.	Clone this GitHub repository: `git clone https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models.git`
 2.	Navigate to the WELT folder and install all necessary dependencies: `python3 -m pip install -r requirements.txt` \
 Note: To install appropriate torch, follow the [download instructions](https://pytorch.org/) based on your development environment.
 ## Data Preparation
 **NER Datasets**
 | Dataset 	| Source 	|
 |---	|---	|
-| <ul><li>NCBI-disease</li> <li>BC5CDR-disease</li>  <li>BC5CDR-chem</li>  <li>BC4CHEMD</li>  <li>JNLPBA</li>  <li>BC2GM</li> <li>linnaeus</li> <li>s800</li></ul> 	| NER datasets are directly reterived from [BioBERT](https://github.com/dmis-lab/biobert) via this [link](https://drive.google.com/file/d/1cGqvAm9IZ_86C4Mj7Zf-w9CFilYVDl8j/view) 	|
+| <ul><li>NCBI-disease</li> <li>BC5CDR-disease</li>  <li>BC5CDR-chem</li></ul> 	| NER datasets are directly reterived from [BioBERT](https://github.com/dmis-lab/biobert) via this [link](https://drive.google.com/file/d/1cGqvAm9IZ_86C4Mj7Zf-w9CFilYVDl8j/view) 	|
 | <ul><li>BioRED-Dis</li>  <li>BioRED-Chem</li></ul> 	| We have extended the prementioned NER datastes to include [BioRED](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioRED/). To convert from  `BioC XML / JSON` to `conll`, we used [bconv](https://github.com/lfurrer/bconv) and filtered the chemical and disease entities. 	|
 
 **Data Download** \
