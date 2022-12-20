@@ -82,7 +82,7 @@ class DataTrainingArguments:
     )
     weight_scheme:str=field(
         default="WELT",
-        metadata={"help": "There are different weighting schemes as follows WELT,ISNS,INS,ENS."}
+        metadata={"help": "Handling Class Imbalance via WELT."}
         )
     beta_factor:float=field(
          default=0.0,
@@ -133,38 +133,13 @@ def main():
     TotalTags=sum_0+sum_1+sum_2
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     global outputt
-    if(data_args.weight_scheme=="INS"):
-            New_weight_sum0=(1/sum_0)
-            New_weight_sum1=(1/sum_1)
-            New_weight_sum2=(1/sum_2)
-            NewWeights=np.array([New_weight_sum0,New_weight_sum1,New_weight_sum2])
-            TorchWeights=torch.from_numpy(NewWeights).float().to('cuda')
-            outputt=TorchWeights    
-           
-    elif(data_args.weight_scheme=="ISNS"):
-             New_weight_sum0=(1/math.sqrt(sum_0))
-             New_weight_sum1=(1/math.sqrt(sum_1))
-             New_weight_sum2=(1/math.sqrt(sum_2))
-             NewWeights=np.array([New_weight_sum0,New_weight_sum1,New_weight_sum2])
-             TorchWeights=torch.from_numpy(NewWeights).float().to('cuda')
-             outputt=TorchWeights    
-             
-    elif(data_args.weight_scheme=="ENS"):
-             New_weight_sum0=(1-data_args.beta_factor/(1-np.power(data_args.beta_factor,sum_0)))
-             New_weight_sum1=(1-data_args.beta_factor/(1-np.power(data_args.beta_factor,sum_1)))
-             New_weight_sum2=(1-data_args.beta_factor/(1-np.power(data_args.beta_factor,sum_2)))
-             NewWeights=np.array([New_weight_sum0,New_weight_sum1,New_weight_sum2])
-             TorchWeights=torch.from_numpy(NewWeights).float().to('cuda')
-             outputt=TorchWeights    
-        
-    else:
-             New_weight_sum0=(1-sum_0 /TotalTags)
-             New_weight_sum1=(1-sum_1/TotalTags)
-             New_weight_sum2=(1-sum_2/TotalTags)
-             NewWeights=np.array([New_weight_sum0,New_weight_sum1,New_weight_sum2])
-             TorchWeights=torch.from_numpy(NewWeights).float().to('cuda')
-             outputt=TorchWeights
-             outputt=torch.softmax(TorchWeights, dim=0)
+    New_weight_sum0=(1-sum_0/TotalTags)
+    New_weight_sum1=(1-sum_1/TotalTags)
+    New_weight_sum2=(1-sum_2/TotalTags)
+    NewWeights=np.array([New_weight_sum0,New_weight_sum1,New_weight_sum2])
+    TorchWeights=torch.from_numpy(NewWeights).float().to('cuda')
+    outputt=TorchWeights
+    outputt=torch.softmax(TorchWeights, dim=0)
     print(outputt) 
     # Setup logging
     logging.basicConfig(
