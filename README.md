@@ -5,13 +5,11 @@ Authors: Ghadeer Mobasher, Pedro Ruas, Francisco M. Couto, Michael Gertz and Wol
 Biomedical pre-trained language models (BioPLMs) have been achieving state-of-the-art results for various biomedical text mining tasks. However, prevailing fine-tuning approaches naively train BioPLMs on targeted datasets without considering the class distributions. This is problematic, especially
 when dealing with imbalanced biomedical gold-standard datasets for named entity recognition (NER). Regardless of the high-performing state-of-the-art fine-tuned NER models, the training datasets include more "O" tags. Thus these models are biased towards "O" tags and misclassify biomedical entities ("B" & "I") tags. To fill the gap, we propose WELT, a cost-sensitive trainer that handles the class imbalance for the task of biomedical NER. We investigate the impact of WELT against the traditional fine-tuning approaches on mixed-domain and domain-specific BioPLMs. In addition, we examine the effect of handling the class imbalance on another downstream task which is named entity linking (NEL)
 
-[For transperancy, all the :hugs: models are publicaly avaliable as a result of our expiremental work](https://huggingface.co/mobashgr)
-
 ## Installation 
 **Dependencies**
 -	Python (>=3.6)
 -	Pytorch (>=1.2.0) 
-1.	Clone this GitHub repository: `git clone https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models.git`
+1.	Clone this GitHub repository: `git clone https://github.com/mobashgr/WELT.git`
 2.	Navigate to the WELT folder and install all necessary dependencies: `python3 -m pip install -r requirements.txt` \
 Note: To install appropriate torch, follow the [download instructions](https://pytorch.org/) based on your development environment.
 ## Data Preparation
@@ -38,7 +36,7 @@ We have conducted expirements on different BERT models using WELT weighting sche
 |PubMedBERT| [model_name_or_path](https://huggingface.co/microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract)|
 |SciBERT| [model_name_or_path](https://huggingface.co/allenai/scibert_scivocab_uncased)|
 
-**Weighting Schemes** 
+**WELT equations** 
 |Name | Formula |
 |---	|---	|
 |Inverse of Number of Samples (INS)|$weight[class]= \textstyle \dfrac{1}{n_c}$|
@@ -86,11 +84,7 @@ python run_weight_scheme.py \
     --do_predict \
     --overwrite_output_dir
   ```
-## Quick Links  
-  -Usage of WELT \
-  -Hyperparameters \
-  -Table of WELT Models \
-  -Results tables 
+## Fine-tuned models avaliable on HF :hugs:
  ## Citation
   (TBD)
 ## Acknowledgment
