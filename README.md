@@ -37,18 +37,16 @@ Our expiremental work focused on BioBERT(mixed/continual pre-trained language mo
 
 
 **WELT equations** \
-  $CW_c= \textstyle 1- \dfrac{ClassDistibution_c}{TotalOfClassesDistributions_t}$ \
-  $$WV= \textstyle \left( \sum_{c=1}^{t} \right) CW_c$$ \
-  $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
-  $\sum_{i=1}^{10} t_i$
-
-  $\sigma \vec{(WV)} i=  \textstyle \dfrac {e^{WV_i}}{ \sum_{c=1}^{t}e^{WV_c}}$ \
- $loss(x,class)=\textstyle \sigma \vec{(WV)} i [class] \Theta$ \
- $where,\Theta= -x[class]+\log{\sum_j exp(x[j])}$  
+These equations are applied to "O" (major class), "B" & "I" (minor classes) as weighting scheme to handle class imbalance.
+  $$CW_c= \textstyle 1- \dfrac{ClassDistibution_c}{TotalOfClassesDistributions_t}$$ \
+  $$WV= \sum_{c=1}^{t} CW_c$$\
+  $$\sigma \vec{(WV)} i=\dfrac {e^{WV_i}}{ \sum_{c=1}^{t}e^{WV_c}}$$ \
+ $$loss(x,class)=\textstyle \sigma \vec{(WV)} i [class] \Theta$$ \
+ $$where,\Theta= -x[class]+\log{\sum_j exp(x[j])}$$  
 
 **Cost-Sensitive Fine-Tuning**
 
-We have adapted [BioBERT-run_ner.py](https://github.com/dmis-lab/biobert-pytorch/blob/master/named-entity-recognition/run_ner.py) to develop in [run_weight_scheme.py](https://github.com/mobashgr/WELT/blob/main/named-entity-recognition/run_weight_scheme.py#L94-103) that extends `Trainer` class to `WeightedLossTrainer` and override `compute_loss` function to include [`INS, ISNS, ENS and WELT`](https://github.com/mobashgr/WELT/blob/main/named-entity-recognition/run_weight_scheme.py#L129-168) in [`weighted Cross-Entropy loss` function] (https://github.com/mobashgr/WELT/blob/main/named-entity-recognition/run_weight_scheme.py#L101).
+We have adapted [BioBERT-run_ner.py](https://github.com/dmis-lab/biobert-pytorch/blob/master/named-entity-recognition/run_ner.py) to develop in [run_weight_scheme.py](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/run_weight_scheme.py#L94-103) that extends `Trainer` class to `WeightedLossTrainer` and override `compute_loss` function to include [`INS, ISNS, ENS and WELT`](https://github.com/mobashgr/WELT/blob/main/named-entity-recognition/run_weight_scheme.py#L129-168) in [`weighted Cross-Entropy loss` function] (https://github.com/mobashgr/WELT/blob/main/named-entity-recognition/run_weight_scheme.py#L101).
 
 **Evaluation** \
 For fair comparison we have used the same NER evaluation approach of [BioBERT](https://github.com/dmis-lab/biobert)
