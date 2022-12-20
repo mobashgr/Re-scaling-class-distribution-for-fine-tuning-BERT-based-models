@@ -1,5 +1,5 @@
 # Re-scaling class distribution for fine-tuning BERT-based models
-Authors: Ghadeer Mobasher*, Pedro Ruas, Francisco M. Couto, Michael Gertz and Wolfgang Müller
+Authors: Ghadeer Mobasher*, Pedro Ruas, Francisco M. Couto, Olga Krebs, Michael Gertz and Wolfgang Müller
 
 ## Motive
 Biomedical pre-trained language models (BioPLMs) have been achieving state-of-the-art results for various biomedical text mining tasks. However, prevailing fine-tuning approaches naively train BioPLMs on targeted datasets without considering the class distributions. This is problematic, especially
@@ -39,8 +39,9 @@ Our expiremental work focused on BioBERT(mixed/continual pre-trained language mo
 **WELT equations** \
 These equations are applied to "O" (major class), "B" & "I" (minor classes) as weighting scheme to handle class imbalance.
   $$CW_c= \textstyle 1- \dfrac{ClassDistibution_c}{TotalOfClassesDistributions_t}$$ \
+  $$\text where \ c= |O| or |B| or|I| \text{and} \ t=|O|+|B|+|I|$$ 
   $$WV= \sum_{c=1}^{t} CW_c$$\
-  $$\sigma \vec{(WV)} i=\dfrac {e^{WV_i}}{ \sum_{c=1}^{t}e^{WV_c}}$$ \
+  $$\sigma \vec{(WV)} i=\dfrac {e^{WV_i}}{\sum\limits_{c=1}^{t} e^{WV_c}}$$\
  $$loss(x,class)=\textstyle \sigma \vec{(WV)} i [class] \Theta$$ \
  $$where,\Theta= -x[class]+\log{\sum_j exp(x[j])}$$  
 
