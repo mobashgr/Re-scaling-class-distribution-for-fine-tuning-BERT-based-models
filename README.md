@@ -36,12 +36,15 @@ Our expiremental work focused on BioBERT(mixed/continual pre-trained language mo
 |PubMedBERT| [model_name_or_path](https://huggingface.co/microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract)|
 
 
-**WELT equations** 
+**WELT equations** \
   $CW_c= \textstyle 1- \dfrac{ClassDistibution_c}{TotalOfClassesDistributions_t}$ \
-  $WV= \textstyle \sum_{c=1}^{t}CW_c$ \
+  $$WV= \textstyle \left( \sum_{c=1}^{t} \right) CW_c$$ \
+  $$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+  $\sum_{i=1}^{10} t_i$
+
   $\sigma \vec{(WV)} i=  \textstyle \dfrac {e^{WV_i}}{ \sum_{c=1}^{t}e^{WV_c}}$ \
  $loss(x,class)=\textstyle \sigma \vec{(WV)} i [class] \Theta$ \
- $where,\Theta= -x[class]+\log{\sum_j exp(x[j])}$  \
+ $where,\Theta= -x[class]+\log{\sum_j exp(x[j])}$  
 
 **Cost-Sensitive Fine-Tuning**
 
