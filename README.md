@@ -26,7 +26,7 @@ To directly download NER datasets, use [`download.sh`](https://github.com/mobash
 We adapted the [`preprocessing.sh`](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/preprocess.sh) from [BioBERT](https://github.com/dmis-lab/biobert) to include [BioRED](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioRED/)
 
 ## Reproducing Paper's results
-We have conducted experiments on two different BERT models using the WELT weighting scheme. We have compared WELT against the corresponding traditional fine-tuning approaches(i.e.  BioBERT fine-tuning)
+We have conducted our experiments on two different BERT models using the WELT weighting scheme. We have compared WELT against the corresponding traditional fine-tuning approaches(i.e.  BioBERT fine-tuning). We provide all the instructions to run from scratch and provide the output of each step as well.
 
 ### 1. Fine-tuning BERT Models 
 Our experimental work focused on BioBERT(mixed/continual pre-trained language model) & PubMedBERT(domain-specific/trained from scratch pre-trained language model), however, WELT can be adapted to other transformers like ELECTRA.
