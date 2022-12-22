@@ -60,7 +60,7 @@ Track 2 - NLM-CHEM track Full-text Chemical Identification and Indexing in PubMe
 ## Quick Link
 - [Fine-tuned models available on HF ](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/README.md#Fine-tuned-HF-:hugs:)
 - [Fine-tuning from scratch example](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/README.md#Usage-example-for-WELT-finetuning)
--- [Predicting Disease entites using WELT example] ((https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/README.md#Usage-example-for-predicting-disease-entities-using-WELT)
+-[Predicting Disease entites using WELT example] (https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/README.md#Usage-example-for-predicting-disease-entities-using-WELT)
  ## Citation
   (TBD)
 ## Acknowledgment
