@@ -50,13 +50,27 @@ python run_weight_scheme.py \
     --overwrite_output_dir
   ```
 ## Usage example for predicting disease entities using WELT
-This is an example of fine-tuning `BC5CDR-Disease` over `BioBERT` using an `WELT` weight scheme
+This is an example of fine-tuning `NCBI-Disease` over `BioBERT` using an `WELT` fine-tuned model on HF
 ```bash
 cd named-entity-recognition
 
 python3 ner.py \
---xmlfilepath Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/unannotatedxmls/CDR_TestSet.BioC_Disease_noannotations.xml \
---model_name_or_path ghadeermobasher/Original-BioBERT-BC5CDRDisease \
+--xmlfilepath Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/unannotatedxmls/NCBItestset_corpus_noannotations.xml \
+--model_name_or_path ghadeermobasher/WELT-BioBERT-NCBI \
 --NERType Disease \
---outputfilepath /hits/basement/sdbv/mobashgr/testfiles/BC7T2-evaluation_v3/drive-download-20220131T174025Z-001/BC7T2-NLMChem-corpus_v2.BioC.xml/PredictedPath/job_ghadeermobasher/Original-BioBERT-BC5CDRDisease.xml
+--outputfilepath Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/predictedpath/NCBI-WELT-BioBERT-example
   ```
+## Usage example for strict evaluation of `NCBI-Disease` predicted file using WELT
+
+Assuming that [`download.sh`](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/download.sh)has been already executed.
+
+```bash
+cd BC7T2-evaluation_v3
+
+python3 evaluate.py \
+--reference_path Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/referencepath/NCBItestset_corpus.xml \
+ --prediction_path Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/predictedpath/NCBI-WELT-BioBERT.xml \
+ --evaluation_type span \
+ --evaluation_method strict \
+ --annotation_type Disease
+ ```
