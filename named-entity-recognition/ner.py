@@ -1,5 +1,8 @@
+"""
+@author: mobashgr
+This code is used to build chemical and disease xml files from fine-tuned models
+"""
 import pandas as pd
-
 import os
 import sys
 import torch
@@ -90,39 +93,33 @@ def main():
                         start = df['start'].tolist()
                         end = df['end'].tolist()
                         span = sorted(start+end)
-                        #print("Start","End")
-                       # print("\n")
-                        #print(span)
                         Finalspan = []
                         for i in span:
                              if i not in Finalspan and span.count(i) <=1:
                                 Finalspan.append(i)
-                             #print("duplicate removal")
-                        #print(Finalspan)
+                           
 
                         for i in range(0,len(Finalspan)-1,2):
                             value = Finalspan[i:i+2]
                             if len(value)>0:
-                              #  print (value) 
+                            
                                 t= (rating[value[0]:value[1]]) #start
                                 counter+=1
-                           # if len (start) and len(end) >0 :
                                 Annotation = ElementTree.SubElement(neighbor, 'annotation', {'id':str (counter)})
-                              #  print(counter)
+                             
                                 Typer = ElementTree.SubElement(Annotation, 'infon',{'key':'type'})
                                 if(args.NERType=="Chemical"):
                                       Typer.text= 'Disease'
                                 else:
                                      Typer.text= 'Disease'
-                                #print(Typer)
+                             
                                 starrt=int(value[0])
-                              #  print(starrt)
+                              
                                 Span=int(offset.text)+starrt
-                              #  print(Span)
+                        
                                 Location= ElementTree.SubElement(Annotation, 'location',{'offset':str(Span), 'length':str(len(t))})
                                 Word=ElementTree.SubElement(Annotation, 'text')
-                                Word.text=t
-                                #print(Word.text)
+                                
     tree.write(args.outputfilepath)
     print('DONE')
 
