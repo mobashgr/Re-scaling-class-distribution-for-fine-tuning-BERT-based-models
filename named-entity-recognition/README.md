@@ -74,6 +74,4 @@ python3 evaluate.py \
  --evaluation_method strict \
  --annotation_type Disease
  ```
-```bash
-tree
-```
+
