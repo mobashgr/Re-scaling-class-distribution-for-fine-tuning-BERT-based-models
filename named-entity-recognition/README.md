@@ -16,7 +16,7 @@
 | BC5CDR-Chemical |[model_name_or_path](https://huggingface.co/ghadeermobasher/Original-PubMedBERT-BC5CDRChemical) | [model_name_or_path](https://huggingface.co/ghadeermobasher/WELT-PubMedBERT-BC5CDRChemical) |
 | BioRED-Chem |[model_name_or_path](https://huggingface.co/ghadeermobasher/Original-PubMedBERT-BioRedChemical) | [model_name_or_path](https://huggingface.co/ghadeermobasher/WELT-PubMedBERT-BioRedChemical) |
 
-##Usage example for WELT finetuning
+## Usage example for WELT finetuning
 This is an example of fine-tuning `NCBI-Disease` over `BioBERT` using an `WELT` weight scheme
 ```bash
 
@@ -49,3 +49,6 @@ python run_weight_scheme.py \
     --do_predict \
     --overwrite_output_dir
   ```
+## Usage example for predicting disease entities using WELT
+This is an example of fine-tuning `NCBI-Disease` over `BioBERT` using an `WELT` weight scheme
+```bash
