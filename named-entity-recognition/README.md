@@ -10,6 +10,7 @@ The table shows the used hyper-parameters for fine-tuning BERT models.
 | BioRED-Chem | 10 | 32| 128 |
 
 ## Fine-tuned HF 🤗
+The table provides links to the fine-tuned models as an output of our expiremental work.
 | Dataset | Orignal| WELT 
 | :------------------ | :----- | :----- 
 | NCBI-Disease | [model_name_or_path](https://huggingface.co/ghadeermobasher/Original-BioBERT-NCBI)| [model_name_or_path](https://huggingface.co/ghadeermobasher/WELT-BioBERT-NCBI)|
