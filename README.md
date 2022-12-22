@@ -58,7 +58,7 @@ Track 2 - NLM-CHEM track Full-text Chemical Identification and Indexing in PubMe
 
 
 ## Fine-tuned models available on HF 
-[:hugs:](Fine-tuned HF 🤗)
+[:hugs:](#Fine-tuned-HF-🤗)
  ## Citation
   (TBD)
 ## Acknowledgment
