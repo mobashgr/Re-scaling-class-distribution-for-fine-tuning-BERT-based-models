@@ -27,7 +27,7 @@ Same instructions are used for evaluation code.
 We adapted the [`preprocessing.sh`](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/preprocess.sh) from [BioBERT](https://github.com/dmis-lab/biobert) to include [BioRED](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioRED/)
 
 ## Reproducing Paper's results
-We have conducted our experiments on two different BERT models using the WELT weighting scheme. We have compared WELT against the corresponding traditional fine-tuning approaches(i.e.  BioBERT fine-tuning). We provide explaination of [WELT fine-tuning approach](#WELT-Fine-Tuning)
+We have conducted our experiments on two different BERT models using the WELT weighting scheme. We have compared WELT against the corresponding traditional fine-tuning approaches(i.e.  BioBERT fine-tuning). We provide explaination of [WELT fine-tuning approach](#1.2-WELT-fine-tuning)
 We provide all the [fine-tuned models on Huggingface, example on fine-tuning from scratch using WELT, example on predicting  and evaluating disease entites](#Quick-Links).
 
 ### 1. Fine-tuning BERT Models 
@@ -47,7 +47,7 @@ These equations are applied to "O" (major class), "B" & "I" (minor classes) as a
  $$loss(x,class)=\textstyle \sigma \vec{(WV)} i [class] \Theta$$ \
  $$where,\Theta= -x[class]+\log{\sum_j exp(x[j])}$$  
 
-### 1.2 WELT Fine-Tuning
+### 1.2 WELT fine-tuning
 
 We have adapted [BioBERT-run_ner.py](https://github.com/dmis-lab/biobert-pytorch/blob/master/named-entity-recognition/run_ner.py) to develop cost-senstive trainer in [run_weight_scheme.py](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/run_weight_scheme.py#L94-103) that extends `Trainer` class to `WeightedLossTrainer` and override [`compute_loss`](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/run_weight_scheme.py#L96) function to include [`WELT`](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/run_weight_scheme.py#L129-142) in [`weighted Cross-Entropy loss function`](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/run_weight_scheme.py#L101)
 
