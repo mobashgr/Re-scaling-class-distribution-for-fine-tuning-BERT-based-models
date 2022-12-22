@@ -58,7 +58,7 @@ python3 ner.py \
 --xmlfilepath Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/unannotatedxmls/NCBItestset_corpus_noannotations.xml \
 --model_name_or_path ghadeermobasher/WELT-BioBERT-NCBI \
 --NERType Disease \
---outputfilepath Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/predictedpath/NCBI-WELT-BioBERT-example
+--outputfilepath Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/predictedpath/NCBI-WELT-BioBERT-example.xml
   ```
 ## Usage example for strict evaluation of `NCBI-Disease` predicted file using WELT
 
