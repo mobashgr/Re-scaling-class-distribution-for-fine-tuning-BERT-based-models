@@ -57,7 +57,8 @@ We have the strict and approximate evaluation of [BioCreative VII
 Track 2 - NLM-CHEM track Full-text Chemical Identification and Indexing in PubMed articles](https://ftp.ncbi.nlm.nih.gov/pub/lu/BC7-NLM-Chem-track/BC7T2-evaluation_v3.zip)
 
 
-## Fine-tuned models available on HF :hugs:
+## Fine-tuned models available on HF 
+[:hugs:](Fine-tuned HF 🤗)
  ## Citation
   (TBD)
 ## Acknowledgment
