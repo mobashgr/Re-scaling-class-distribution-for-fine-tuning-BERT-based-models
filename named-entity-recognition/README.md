@@ -50,7 +50,7 @@ python run_weight_scheme.py \
     --overwrite_output_dir
   ```
 ## Usage example for predicting disease entities using WELT
-This is an example of fine-tuning `NCBI-Disease` over `BioBERT` using an `WELT` weight scheme
+This is an example of fine-tuning `BC5CDR-Disease` over `BioBERT` using an `WELT` weight scheme
 ```bash
 cd named-entity-recognition
 
