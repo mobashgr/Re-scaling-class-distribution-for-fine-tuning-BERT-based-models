@@ -57,8 +57,9 @@ We have the strict and approximate evaluation of [BioCreative VII
 Track 2 - NLM-CHEM track Full-text Chemical Identification and Indexing in PubMed articles](https://ftp.ncbi.nlm.nih.gov/pub/lu/BC7-NLM-Chem-track/BC7T2-evaluation_v3.zip)
 
 
-## Fine-tuned models available on HF 
-[:hugs:](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/README.md#Fine-tuned-HF-:hugs:)
+## Quick Link
+- [Fine-tuned models available on HF ](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/README.md#Fine-tuned-HF-:hugs:)
+- [Fine-tuning from scratch example](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/README.md#Usage-example-for-WELT-finetuning)
  ## Citation
   (TBD)
 ## Acknowledgment
