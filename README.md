@@ -53,7 +53,7 @@ We have adapted [BioBERT-run_ner.py](https://github.com/dmis-lab/biobert-pytorch
 After fine-tuning BERT models, we recognize chemical & disease entites via [`ner.py`](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/ner.py). The output files are in [output directory](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/)
 
 **Evaluation** \
-We have the strict and approximate evaluation of [BioCreative VII
+We have used the strict and approximate evaluation of [BioCreative VII
 Track 2 - NLM-CHEM track Full-text Chemical Identification and Indexing in PubMed articles](https://ftp.ncbi.nlm.nih.gov/pub/lu/BC7-NLM-Chem-track/BC7T2-evaluation_v3.zip)
 
 
