@@ -52,3 +52,7 @@ python run_weight_scheme.py \
 ## Usage example for predicting disease entities using WELT
 This is an example of fine-tuning `NCBI-Disease` over `BioBERT` using an `WELT` weight scheme
 ```bash
+cd named-entity-recognition
+
+python3 ner.py --xmlfilepath /hits/basement/sdbv/mobashgr/testfiles/BC7T2-evaluation_v3/drive-download-20220131T174025Z-001/BC7T2-NLMChem-corpus_v2.BioC.xml/ReferencePath/CDR_TestSet.BioC_Disease_noannotations.xml --model_name_or_path ghadeermobasher/Original-BioBERT-BC5CDRDisease   --NERType Disease --outputfilepath /hits/basement/sdbv/mobashgr/testfiles/BC7T2-evaluation_v3/drive-download-20220131T174025Z-001/BC7T2-NLMChem-corpus_v2.BioC.xml/PredictedPath/job_ghadeermobasher/Original-BioBERT-BC5CDRDisease.xml
+  ```
