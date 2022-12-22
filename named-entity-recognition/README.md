@@ -54,6 +54,9 @@ This is an example of fine-tuning `NCBI-Disease` over `BioBERT` using an `WELT` 
 ```bash
 cd named-entity-recognition
 
-python3 ner.py --xmlfilepath Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/unannotatedxmls/CDR_TestSet.BioC_Disease_noannotations.xml 
---model_name_or_path ghadeermobasher/Original-BioBERT-BC5CDRDisease   --NERType Disease --outputfilepath /hits/basement/sdbv/mobashgr/testfiles/BC7T2-evaluation_v3/drive-download-20220131T174025Z-001/BC7T2-NLMChem-corpus_v2.BioC.xml/PredictedPath/job_ghadeermobasher/Original-BioBERT-BC5CDRDisease.xml
+python3 ner.py \
+--xmlfilepath Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/unannotatedxmls/CDR_TestSet.BioC_Disease_noannotations.xml \
+--model_name_or_path ghadeermobasher/Original-BioBERT-BC5CDRDisease \
+--NERType Disease \
+--outputfilepath /hits/basement/sdbv/mobashgr/testfiles/BC7T2-evaluation_v3/drive-download-20220131T174025Z-001/BC7T2-NLMChem-corpus_v2.BioC.xml/PredictedPath/job_ghadeermobasher/Original-BioBERT-BC5CDRDisease.xml
   ```
