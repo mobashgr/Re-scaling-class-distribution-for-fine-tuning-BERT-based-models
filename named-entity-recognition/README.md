@@ -1,4 +1,6 @@
 ## Hyperparameters
+The table shows the used hyper-parameters for fine-tuning BERT models.
+
 | Dataset | Epochs | Batch Size | Maximum Length |
 | :------------------ | :----- | :----- | :----- |
 | NCBI-Disease | 10| 8 | 320 |
