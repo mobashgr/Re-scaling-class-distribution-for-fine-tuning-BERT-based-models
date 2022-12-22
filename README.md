@@ -27,7 +27,7 @@ Same instructions are used for evaluation code.
 We adapted the [`preprocessing.sh`](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/preprocess.sh) from [BioBERT](https://github.com/dmis-lab/biobert) to include [BioRED](https://ftp.ncbi.nlm.nih.gov/pub/lu/BioRED/)
 
 ## Reproducing Paper's results
-We have conducted our experiments on two different BERT models using the WELT weighting scheme. We have compared WELT against the corresponding traditional fine-tuning approaches(i.e.  BioBERT fine-tuning). We provide explaination of [WELT fine-tuning approach](#Cost-Sensitive-Fine-Tuning)
+We have conducted our experiments on two different BERT models using the WELT weighting scheme. We have compared WELT against the corresponding traditional fine-tuning approaches(i.e.  BioBERT fine-tuning). We provide explaination of [WELT fine-tuning approach](# Cost-Sensitive Fine-Tuning)
 We provide all the [fine-tuned models on Huggingface, example on fine-tuning from scratch using WELT, example on predicting  and evaluating disease entites](#Quick-Links).
 
 ### 1. Fine-tuning BERT Models 
