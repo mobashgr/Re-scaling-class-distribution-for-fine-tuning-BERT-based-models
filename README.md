@@ -58,7 +58,7 @@ Track 2 - NLM-CHEM track Full-text Chemical Identification and Indexing in PubMe
 
 
 ## Fine-tuned models available on HF 
-[:hugs:](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/README.md#Hyperparameters)
+[:hugs:](https://github.com/mobashgr/Re-scaling-class-distribution-for-fine-tuning-BERT-based-models/blob/main/named-entity-recognition/README.md#Fine-tuned-HF-:hugs:)
  ## Citation
   (TBD)
 ## Acknowledgment
